@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí - Eric Terrats Sánchez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a2b3c;
+            color: #fff;
+            padding: 10px 20px 30px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            letter-spacing: 1px;
+            color:#ffffff
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 20px 0 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #3a7bd5;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #1a2b3c;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            font-size: 1em;
+            border-top: 4px solid #3a7bd5;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #1a2b3c;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #3a7bd5;
+            margin: 10px auto 0;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            font-size: 1.1em;
+        }
+
+        .sobre-mi-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            align-items: center;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 60px 40px;
+            margin-bottom: 60px;
+        }
+
+        .sobre-mi-texto {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .sobre-mi-foto {
+            flex: 0 1 250px;
+            text-align: center;
+        }
+
+        .sobre-mi-foto img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3a7bd5;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .sobre-mi-foto img:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .experiencia, .formacion, .idiomas, .conocimientos {
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px auto;
+        }
+
+        .experiencia ul, .formacion ul, .idiomas ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .experiencia li, .formacion li, .idiomas li {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f0f4f8;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .conocimientos ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .conocimientos li {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            color: #3a7bd5;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .conocimientos li:hover {
+            background-color: #d9e6f2;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            section {
+                padding: 60px 15px;
+            }
+
+            .sobre-mi-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portafolio Profesional de Eric Terrats Sánchez</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#proyectos">Proyectos</a></li>
+                <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="sobre-mi-container">
+            <div class="sobre-mi-foto">
+                <img src="path/to/tu-foto.jpg" alt="Foto de Eric Terrats Sánchez">
+                <p>(Inserta aquí el camino a tu foto personal)</p>
+            </div>
+            <div class="sobre-mi-texto">
+                <h2>Perfil</h2>
+                <p>Soy Eric Terrats Sánchez, nacido en Lleida el 26 de agosto de 2005. Con 20 años, he completado un Ciclo Medio de Sistemas Microinformáticos y Redes (SMX) en el instituto Caparrella. Actualmente, estoy cursando un Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma (DAM), donde profundizo en el diseño y programación de soluciones multiplataforma innovadoras.</p>
+                <p>Mi pasión por la tecnología me impulsa a crear aplicaciones funcionales y estéticamente atractivas, con un enfoque en la usabilidad, el rendimiento y el aprendizaje continuo. Me interesa el desarrollo web, las aplicaciones móviles y las tecnologías emergentes.</p>
+            </div>
+        </div>
+
+        <div class="experiencia">
+            <h2>Experiencia</h2>
+            <ul>
+                <li>
+                    <h3>Proyectos Académicos en SMX</h3>
+                    <p>Durante mi ciclo medio, realicé prácticas en configuración de redes, mantenimiento de sistemas y desarrollo básico de aplicaciones.</p>
+                    <p>Tecnologías: Redes locales, Windows/Linux, Hardware.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="formacion">
+            <h2>Formación</h2>
+            <ul>
+                <li>
+                    <h3>Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+                    <p>Instituto Caparrella, Lleida - En curso.</p>
+                    <p>Enfoque en programación Java, Android, bases de datos y desarrollo web.</p>
+                </li>
+                <li>
+                    <h3>Ciclo Medio de Sistemas Microinformáticos y Redes (SMX)</h3>
+                    <p>Instituto Caparrella, Lleida - Completado.</p>
+                    <p>Formación en redes, sistemas operativos y soporte técnico.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="idiomas">
+            <h2>Idiomas</h2>
+            <ul>
+                <li><h3>Español</h3> Nativo</li>
+                <li><h3>Catalán</h3> Nativo</li>
+                <li><h3>Inglés</h3> Intermedio (B1/B2)</li>
+            </ul>
+        </div>
+
+        <div class="conocimientos">
+        <h2>Habilidades</h2>
+            <ul>
+                <li>Montaje y Mantenimiento de Equipos Informáticos</li>
+                <li>Instalación y Configuración de Sistemas Operativos (Windows y Linux)</li>
+                <li>Configuración de Redes Locales (LAN y WiFi)</li>
+                <li>Instalación y Configuración de Routers y Switches</li>
+                <li>Diagnóstico y Resolución de Averías Hardware y Software</li>
+                <li>Soporte Técnico a Usuarios</li>
+                <li>Seguridad Informática Básica (Antivirus y Copias de Seguridad)</li>
+                <li>Gestión Básica de Bases de Datos (SQL)</li>
+                <li>Instalación y Configuración de Periféricos</li>
+             </ul>
+         </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 Eric Terrats Sánchez. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
